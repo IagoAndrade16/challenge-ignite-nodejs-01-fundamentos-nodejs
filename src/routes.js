@@ -22,9 +22,8 @@ export const routes = [
   {
     method: 'POST',
     path: buildRoutePath('/tasks'),
-    handler: (req, res) => {
+    handler: (req, res) => {      
       const { title, description } = req.body;
-
       if(!title || !description) {
         return res.writeHead(400).end(JSON.stringify({ 
           message: 'Title or description is missing'
